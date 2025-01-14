@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-dark: #0c0c0c;
+  --color-light: #f4f4f4;
+}
+
+* {
+  font-family: "H-Var";
+}
+
+@font-face {
+  font-family: "H-Var";
+  src: url(./assets/fonts/HelveticaVar.ttf);
+}
+
+@font-face {
+  font-family: "Pln-R";
+  src: url(./assets/fonts/PlainRegular.woff2);
+}
+
+@font-face {
+  font-family: "S-Dsp";
+  src: url(./assets/fonts/SaolDisplayRegularItalic.woff2);
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url(./assets/fonts/Nike-Futura.woff2);
+}
