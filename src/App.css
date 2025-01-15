@@ -20,12 +20,85 @@
   object-fit: cover;
 }
 
+/* sidebar written in pure css */
+
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 40;
+  z-index: 20;
   height: 100%;
   width: 100%;
-  background: var(--color-dark);
+  background-color: #82969c;
+  color: var(--color-light);
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+}
+
+.sidebar .sdFirst {
+  display: grid;
+  grid-template-columns: 1fr 3.5fr;
+  /* background: #000; */
+}
+
+.sdFirst .closeSec {
+  background-color: #82969c;
+}
+
+.sidebar .sdSecond {
+  color: var(--color-dark);
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.ripple-btn-wrapper {
+  max-width: 767px;
+  margin: 50px auto 0;
+  text-align: center;
+}
+
+.ripple-btn-wrapper .ripple-button {
+  background-color: #7c7cef;
+  color: #ffffff;
+  border: none;
+  display: inline-block;
+  padding: 16px 20px;
+  font-size: 16px;
+  min-width: 200px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transform-origin: center center;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.4;
+  border-radius: 5px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.ripple-btn-wrapper .ripple-button:focus,
+.ripple-btn-wrapper .ripple-button:active {
+  outline: 0;
+  box-shadow: none;
+}
+
+.ripple-btn-wrapper .ripple-button .ripple-span {
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  transform: scale(0);
+  animation: ripple 0.7s linear;
+  width: 20px;
+  height: 20px;
+}
+
+@keyframes ripple {
+  from {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(30);
+    opacity: 0;
+  }
 }

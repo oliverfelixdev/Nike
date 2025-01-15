@@ -22,3 +22,33 @@ const Scene = () => {
 };
 
 export default Scene;
+
+// code of canvas ::::
+/*
+  JSX:
+      <div className="cylinder w-1/2 h-full">
+        <Canvas flat camera={{ fov: 65 }}>
+          <ambientLight />
+          <Scene />
+          <EffectComposer>
+            <Bloom
+              mipmapBlur
+              intensity={7}
+              luminanceThreshold={0}
+              luminanceSmoothing={0}
+            />
+            <ToneMapping adaptive />
+          </EffectComposer>
+        </Canvas>
+      </div>
+  Imports::
+      import { Canvas } from "@react-three/fiber";
+      import { OrbitControls } from "@react-three/drei";
+      import * as THREE from "three";
+      import {
+        Bloom,
+        EffectComposer,
+        ToneMapping,
+}     from "@react-three/postprocessing";
+      import Scene from "../utils/Scene";
+*/

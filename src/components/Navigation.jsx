@@ -2,14 +2,14 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 const Navigation = () => {
   return (
-    <div className="w-full absolute z-30 top-0 text-[var(--color-light)]">
+    <div className="w-[78%] absolute z-30 top-0 text-[var(--color-light)] bg-zinc-500">
       <div className="w-full flex items-center justify-between px-8 py-8">
         <div className="w-72 flex items-center justify-between">
           <NavLink to="/" className="text-sm font-medium">
             <img src="./src/assets/images/nike.svg" alt="Nike Logo" />
           </NavLink>
           <div className="search_main">
-            <div className="flex items-center justify-center cursor-pointer">
+            <div className="flex items-center justify-center gap-2 cursor-pointer">
               <img src="./src/assets/images/search.svg" alt="searc icon" />
               <span className="text-sm uppercase font-normal">Search</span>
             </div>
