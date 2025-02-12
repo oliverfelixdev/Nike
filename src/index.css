@@ -3,30 +3,122 @@
 @tailwind utilities;
 
 :root {
-  --color-dark: #0c0c0c;
-  --color-light: #f4f4f4;
+  --color-light: #f9f9f9;
+  --color-dark: #1f1f21;
 }
 
 * {
-  font-family: "H-Var";
+  font-family: "Ht";
 }
 
 @font-face {
-  font-family: "H-Var";
-  src: url(./assets/fonts/HelveticaVar.ttf);
+  font-family: "Ht";
+  src: url("./assets/fonts/helveticanowvar.ttf");
 }
 
 @font-face {
-  font-family: "Pln-R";
-  src: url(./assets/fonts/PlainRegular.woff2);
+  font-family: "FG";
+  src: url("./assets/fonts/foundersgrotesk.ttf");
 }
 
-@font-face {
-  font-family: "S-Dsp";
-  src: url(./assets/fonts/SaolDisplayRegularItalic.woff2);
+#root {
+  height: 100%;
+  width: 100%;
 }
 
-@font-face {
-  font-family: "Futura";
-  src: url(./assets/fonts/Nike-Futura.woff2);
+.navigation {
+  background-color: rgba(0, 0, 0, 0.335);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  backdrop-filter: blur(25px);
+}
+
+.navigation-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3rem 3rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(244, 244, 245, 0.15) 0px 0px 0px 1px;
+}
+
+.navigation-top img {
+  height: 1.5rem;
+}
+
+.navigation-top .link-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.navigation-primary {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+}
+
+.navigation-primary img {
+  height: 1.4rem;
+}
+
+.navigation-primary .link-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-left: 8rem;
+}
+
+.home {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.home img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.home-container {
+  height: 100%;
+  width: 100%;
+  background-color: #00000053;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.home-content {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: relative;
+  margin-top: 15rem;
+  padding: 1rem 3rem;
+}
+
+.home-container h1 {
+  font-family: "FG";
+  font-size: 7.5rem;
+  font-weight: 900;
+  line-height: 1;
 }

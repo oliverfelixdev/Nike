@@ -1,104 +1,166 @@
-/* swiper default */
-.swiper {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
+/* Multiple Element styles at same class styles are here in App.css */
+
+.subtitle-sm {
+  font-size: 0.75rem;
+  font-weight: 500;
 }
 
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  object-fit: cover;
+.subtitle-lg {
+  font-size: 0.95rem;
+  font-weight: 400;
 }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  object-fit: cover;
-}
-
-/* sidebar written in pure css */
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 20;
-  height: 100%;
-  width: 100%;
-  background-color: #82969c;
-  color: var(--color-light);
-  display: grid;
-  grid-template-columns: 2.5fr 1fr;
-}
-
-.sidebar .sdFirst {
-  display: grid;
-  grid-template-columns: 1fr 3.5fr;
-  /* background: #000; */
-}
-
-.sdFirst .closeSec {
-  background-color: #82969c;
-}
-
-.sidebar .sdSecond {
-  color: var(--color-dark);
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-}
-
-.ripple-btn-wrapper {
-  max-width: 767px;
-  margin: 50px auto 0;
-  text-align: center;
-}
-
-.ripple-btn-wrapper .ripple-button {
-  background-color: #7c7cef;
-  color: #ffffff;
-  border: none;
-  display: inline-block;
-  padding: 16px 20px;
-  font-size: 16px;
-  min-width: 200px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transform-origin: center center;
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.4;
-  border-radius: 5px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-.ripple-btn-wrapper .ripple-button:focus,
-.ripple-btn-wrapper .ripple-button:active {
-  outline: 0;
-  box-shadow: none;
-}
-
-.ripple-btn-wrapper .ripple-button .ripple-span {
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.7);
-  position: absolute;
-  transform: scale(0);
-  animation: ripple 0.7s linear;
-  width: 20px;
-  height: 20px;
-}
-
-@keyframes ripple {
-  from {
-    transform: scale(1);
-    opacity: 0.4;
+@media only screen and (max-width: 768px) {
+  .navigation {
+    background-color: rgba(255, 255, 255, 0.173);
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
   }
-  to {
-    transform: scale(30);
-    opacity: 0;
+
+  .navigation-top {
+    display: none;
+  }
+
+  .navigation-top .link-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .navigation-primary {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+  }
+
+  .navigation-primary img {
+    height: 1.4rem;
+    max-width: none;
+    max-height: none;
+  }
+
+  .navigation-primary .link-container {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .search-wrap {
+    display: none;
+  }
+
+  .home {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .home img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .home-container {
+    height: 100%;
+    width: 100%;
+    background-color: #00000053;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  .home-content {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    margin-top: 15rem;
+    padding: 1rem 1rem;
+  }
+
+  .home-container h1 {
+    font-family: "FG";
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 0.8;
+  }
+
+  .home-container p {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .search-wrap {
+    display: none;
+  }
+
+  .home {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .home img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .home-container {
+    height: 100%;
+    width: 100%;
+    background-color: #00000053;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  .home-content {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    margin-top: 15rem;
+    padding: 1rem 1rem;
+  }
+
+  .home-container h1 {
+    font-family: "FG";
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 0.8;
+    width: 90%;
+  }
+
+  .home-container p {
+    width: 80%;
   }
 }
