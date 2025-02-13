@@ -26,7 +26,7 @@ const Home = () => {
         src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/c2430c200355795.6660da54a5778.jpg"
         alt="Not Found"
       /> */}
-      <Shoemodel />
+      {/* <Shoemodel /> */}
     </div>
   );
 };
