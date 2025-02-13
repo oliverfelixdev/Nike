@@ -27,7 +27,7 @@
 }
 
 .navigation {
-  background-color: rgba(0, 0, 0, 0.335);
+  /* background-color: rgba(0, 0, 0, 0.335); */
   width: 100%;
   position: absolute;
   top: 0;
@@ -82,6 +82,7 @@
   width: 100vw;
   position: relative;
   overflow: hidden;
+  user-select: none;
 }
 
 .home img {
@@ -99,26 +100,49 @@
   height: 100%;
   width: 100%;
   background-color: #00000053;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
+  position: relative;
+  padding-top: 0.1px;
+  display: flex;
 }
 
 .home-content {
   width: 100%;
+  height: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  position: relative;
-  margin-top: 15rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
   padding: 1rem 3rem;
 }
 
-.home-container h1 {
+.home-content-wrap {
+  margin-top: 15rem;
+}
+
+.home-content h1 {
   font-family: "FG";
   font-size: 7.5rem;
   font-weight: 900;
   line-height: 1;
+}
+
+.shoe-model {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.shoe-model .glb-model-main {
+  height: 85%;
+  width: 60%;
 }
