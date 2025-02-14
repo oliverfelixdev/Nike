@@ -5,26 +5,11 @@ import { IoSearchOutline } from "react-icons/io5";
 import { IoCartOutline } from "react-icons/io5";
 const Navigation = () => {
   const linksFetch = [
-    {
-      link: "New",
-      toward: "/newarrivals",
-    },
-    {
-      link: "Men",
-      toward: "/newarraivals",
-    },
-    {
-      link: "Women",
-      toward: "/newarraivals",
-    },
-    {
-      link: "Kids",
-      toward: "/newarraivals",
-    },
-    {
-      link: "Jordan",
-      toward: "/newarraivals",
-    },
+    { link: "New", toward: "/newarrivals" },
+    { link: "Men", toward: "/newarrivals" },
+    { link: "Women", toward: "/newarrivals" },
+    { link: "Kids", toward: "/newarrivals" },
+    { link: "Jordan", toward: "/newarrivals" },
   ];
 
   return (
@@ -72,7 +57,7 @@ const Navigation = () => {
           </span>
           <Link
             to="/sidebar"
-            className="md:hidden block text-sm py-1.5 px-4 bg-zinc-900 rounded-full"
+            className="md:hidden block text-sm py-1.5 px-4 bg-[var(--color-light)] text-[var(--color-dark)] rounded-full"
           >
             Menu
           </Link>

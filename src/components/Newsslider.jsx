@@ -1,71 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import Button from "./Button";
+import { Link } from "react-router-dom";
 const Newsslider = () => {
-  const imageSlides = [
-    {
-      title: "JA 2 Scratch Black Label",
-      image: "./src/assets/images/newssliderimage01.png",
-      description:
-        "Let your game—and your bling—do the talking in this bold JA 2.",
-    },
-    {
-      title: "Nike 24.7 ImpossiblySoft",
-      image: "./src/assets/images/newssliderimage02.png",
-      description:
-        "Extraordinarily soft and smooth, our ImpossiblySoft fabric feels made for all-day.",
-    },
-
-    {
-      title: "Nike Sportswear Tech Fleece",
-      image: "./src/assets/images/newssliderimage03.png",
-      description:
-        "After setting the bar for premium warmth, comfort and style.",
-    },
-    {
-      title: "Nike 24.7 ImpossiblySoft",
-      image: "./src/assets/images/newssliderimage04.png",
-      description:
-        "Extraordinarily soft and smooth, our ImpossiblySoft fabric feels made for all-day motion.",
-    },
-    {
-      title: "Nike Air",
-      image: "./src/assets/images/newssliderimage05.png",
-      description: "Warmth is just a quick zip away with this roomy hoodie.",
-    },
-  ];
-  const [currentIndex, setCurrentIndex] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % imageSlides.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div>
-      <div className="news-slider">
-        <div className="first-approach">
-          <motion.div
-            className="slider-card"
-            key={currentIndex}
-            initial={{ opacity: 0.8 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0.5 }}
-            transition={{ duration: 1, ease: [0.85, 0, 0.15, 1] }}
-          >
-            <div className="image-container">
-              <img src={imageSlides[currentIndex].image} alt="Not Found" />
-            </div>
-            <div className="text-container">
-              <h3>{imageSlides[currentIndex].title}</h3>
-              <p className="subtitle-sm">
-                {imageSlides[currentIndex].description}
-              </p>
-            </div>
-          </motion.div>
-        </div>
-        <div className="restof"></div>
+    <div className="newsslider relative w-full flex items-start justify-between px-4 sm:px-8 py-10 sm:pt-20 select-none sm overflow-hidden">
+      <div className="text-5xl font-semibold hidden sm:inline-block">02</div>
+      <div className="w-[80%] flex items-center sm:items-start justify-between">
+        <h2 className="text-9xl sm:text-[11rem] font-[FG] leading-[.55]">01</h2>
+        <p className="hidden sm:flex text-[0.60rem] items-start justify-start flex-col cursor-none">
+          <span>
+            NIKE BLACK <br /> PEGASUS 40
+          </span>
+          <span>ON APRIL 2023</span>
+          <span>
+            DETAILS <br /> RUNNING HALF WAY <br />3 COLORS ⇾
+          </span>
+          <span>NIKE PEGASUS</span>
+        </p>
+        <p className="flex text-[0.60rem] items-start justify-start flex-col cursor-none">
+          <span>ROAD RUNNING</span>
+          <span>ZOOM AIR UNITS REACT</span>
+          <span>FOAM ⁕ NIKE</span>
+        </p>
+        <span className="hidden md:block">
+          <Button text="Jordan" />
+        </span>
       </div>
     </div>
   );

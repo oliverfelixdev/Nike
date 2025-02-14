@@ -16,16 +16,10 @@ const Home = () => {
             <p className="home-description subtitle-lg mb-2 sm:block hidden">
               They'll talk whether you rise or fall. So leave 'em breathless.
             </p>
-            <Link to="/newarrivals">
-              <Button />
-            </Link>
+            <Button text="Shop Products" />
           </div>
         </div>
       </div>
-      {/*       <img
-        src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/c2430c200355795.6660da54a5778.jpg"
-        alt="Not Found"
-      /> */}
       {/* <Shoemodel /> */}
     </div>
   );
