@@ -20,12 +20,6 @@
   flex-direction: column;
 }
 
-.slide-content p {
-  padding: 1rem 0;
-  font-weight: 500;
-  font-size: 1.2rem;
-}
-
 .swiper-slide img {
   display: block;
   width: 100%;

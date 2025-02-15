@@ -43,7 +43,7 @@ const Trending = () => {
     let newArr = [...arr];
     for (let i = newArr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [newArr[i], newArr[j]] = [newArr[j], newArr[i]]; // Swap elements
+      [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
     }
     return newArr;
   };
@@ -58,27 +58,34 @@ const Trending = () => {
   };
 
   return (
-    <Masonry
-      breakpointCols={breakpointColumnsObj}
-      className="my-masonry-grid"
-      columnClassName="my-masonry-grid_column"
-    >
-      {shuffledImages.map((img, index) => (
-        <div key={index} className="relative rounded-sm overflow-hidden">
-          <img
-            src={img.image}
-            alt={img.title}
-            className="w-full h-auto object-cover"
-          />
-          <Link to="/shopall">
-            <div className="h-full w-full absolute top-0 left-0 z-20 flex items-start justify-end flex-col p-6 bg-black bg-opacity-20">
-              <p className="text-sm">{img.subtitle}</p>
-              <h3 className="text-lg font-bold">{img.title}</h3>
-            </div>
-          </Link>
+    <div className="trending">
+      <div className="trending-wrapper">
+        <div className="trending-content">
+          <h4 className="text-2xl font-medium mt-32 mb-6">Trending Now</h4>
         </div>
-      ))}
-    </Masonry>
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {shuffledImages.map((img, index) => (
+            <div key={index} className="relative rounded-sm overflow-hidden">
+              <img
+                src={img.image}
+                alt={img.title}
+                className="w-full h-auto object-cover"
+              />
+              <Link to="/shopall">
+                <div className="shopall-masonry-child h-full w-full absolute top-0 left-0 z-20 flex items-start justify-end flex-col p-6 ">
+                  <p className="subtitle-sm">{img.subtitle}</p>
+                  <h3 className="subtitle-xl">{img.title}</h3>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </Masonry>
+      </div>
+    </div>
   );
 };
 

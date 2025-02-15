@@ -21,10 +21,16 @@
   src: url("./assets/fonts/foundersgrotesk.ttf");
 }
 
+@font-face {
+  font-family: "RM";
+  src: url("./assets/fonts/robotomono.ttf");
+}
+
 #root {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+  user-select: none;
 }
 
 .navigation {
@@ -154,7 +160,7 @@
 
 .blcollection-wrapper {
   width: 100%;
-  padding: 5rem 2rem 1rem 2rem;
+  padding: 1rem 2rem 1rem 2rem;
 }
 
 .blcollection-content {
@@ -183,12 +189,28 @@
   height: auto;
 }
 
+.trending {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.trending-wrapper {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+.trending-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 /* TRENDING COMPONENT MASONRY GRID LAYOUT */
 .my-masonry-grid {
   display: flex;
   margin-left: -20px;
   width: auto;
-  padding: 1rem 2rem;
 }
 
 .my-masonry-grid_column {
@@ -197,5 +219,17 @@
 }
 
 .my-masonry-grid_column > div {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.shopall-masonry-child {
+  background-color: #00000035;
+  transition: all 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+  &:hover {
+    background-color: #00000045;
+  }
+}
+
+footer {
+  padding: 1rem 2rem;
 }

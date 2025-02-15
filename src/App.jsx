@@ -5,6 +5,9 @@ import Home from "./components/Home";
 import Newsslider from "./components/Newsslider";
 import Blcollection from "./components/Blcollection";
 import Trending from "./components/Trending";
+import Uitexteffect from "./components/Uitexteffect";
+import Footer from "./components/Footer";
+import Underwork from "./components/Underwork";
 
 const App = () => {
   return (
@@ -14,6 +17,8 @@ const App = () => {
       <Newsslider />
       <Blcollection />
       <Trending />
+      <Uitexteffect />
+      <Footer />
     </div>
   );
 };

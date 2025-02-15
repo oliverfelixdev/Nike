@@ -25,9 +25,9 @@ const Blcollection = () => {
     <div className="blcollection">
       <div className="blcollection-wrapper">
         <div className="blcollection-content">
-          <span className="subtitle-sm">NIKE BASKETBALL</span>
+          <span className="subtitle-sm mt-32">NIKE BASKETBALL</span>
           <div className="blcollection-title-wrapper">
-            <h1 className="mb-8">BLACK LABEL –</h1>
+            <h1 className="mb-8">BLACK LABEL </h1>
             <div className="slider-navigation flex items-center justify-center gap-3">
               <div
                 className="sliderNavigation-el-prev"
@@ -79,10 +79,10 @@ const Blcollection = () => {
             {images.map((item, index) => (
               <SwiperSlide key={index}>
                 <div className="slide-content">
-                  <Link to="/shop">
+                  <Link to="/shopall">
                     <img src={item.src} alt={item.name} />
                   </Link>
-                  <p className="blcollection-slider-caption">{item.name}</p>
+                  <p className="subtitle-xl pt-2">{item.name}</p>
                 </div>
               </SwiperSlide>
             ))}

@@ -10,6 +10,11 @@
   font-weight: 400;
 }
 
+.subtitle-xl {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
 /* BUTTON MAIN */
 .buttonMain {
   border-radius: 0.25rem;
@@ -32,6 +37,7 @@
 
 .buttonMain:hover {
   transform: scale(0.95);
+  overflow: hidden;
 }
 
 .buttonMain-span {
@@ -45,16 +51,15 @@
 }
 
 .buttonMain-span-1 {
-  background-color: var(--color-light);
   transform: translateY(50%);
 }
 
 .buttonMain-span-2 {
-  transform: translateY(100%);
+  transform: translateY(110%);
 }
 
 .buttonMain:hover .buttonMain-span-1 {
-  transform: translateY(-100%);
+  transform: translateY(-110%);
 }
 
 .buttonMain:hover .buttonMain-span-2 {
