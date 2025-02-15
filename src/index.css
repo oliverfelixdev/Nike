@@ -150,7 +150,6 @@
 .blcollection {
   min-height: 100vh;
   width: 100vw;
-
 }
 
 .blcollection-wrapper {
@@ -182,4 +181,21 @@
 .blcollection-slider {
   width: 100%;
   height: auto;
+}
+
+/* TRENDING COMPONENT MASONRY GRID LAYOUT */
+.my-masonry-grid {
+  display: flex;
+  margin-left: -20px;
+  width: auto;
+  padding: 1rem 2rem;
+}
+
+.my-masonry-grid_column {
+  padding-left: 20px;
+  background-clip: padding-box;
+}
+
+.my-masonry-grid_column > div {
+  margin-bottom: 30px;
 }

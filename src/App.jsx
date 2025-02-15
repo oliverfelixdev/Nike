@@ -4,6 +4,7 @@ import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import Newsslider from "./components/Newsslider";
 import Blcollection from "./components/Blcollection";
+import Trending from "./components/Trending";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Home />
       <Newsslider />
       <Blcollection />
+      <Trending />
     </div>
   );
 };

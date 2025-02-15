@@ -1,4 +1,4 @@
-/* Multiple Element styles at same class styles are here in App.css */
+/* Multiple Element styles with same class & styles are here in App.css */
 
 .subtitle-sm {
   font-size: 0.75rem;
@@ -61,6 +61,7 @@
   transform: translateY(-50%);
 }
 
+/* SLIDER BUTTON NAVIGATION */
 .sliderNavigation-el-next,
 .sliderNavigation-el-prev {
   padding: 0.8rem;

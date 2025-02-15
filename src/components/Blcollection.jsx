@@ -6,7 +6,7 @@ import "../Swiper.css";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import { FreeMode, Pagination } from "swiper/modules";
+import { FreeMode } from "swiper/modules";
 import { Link } from "react-router-dom";
 const Blcollection = () => {
   const swiperRef = useRef(null);
@@ -79,7 +79,7 @@ const Blcollection = () => {
             {images.map((item, index) => (
               <SwiperSlide key={index}>
                 <div className="slide-content">
-                <Link to='/shop'>
+                  <Link to="/shop">
                     <img src={item.src} alt={item.name} />
                   </Link>
                   <p className="blcollection-slider-caption">{item.name}</p>
