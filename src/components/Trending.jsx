@@ -61,7 +61,7 @@ const Trending = () => {
     <div className="trending">
       <div className="trending-wrapper">
         <div className="trending-content">
-          <h4 className="text-2xl font-medium mt-32 mb-6">Trending Now</h4>
+          <h4 className="text-2xl font-medium mt-10 md:mt-32 mb-6">Trending Now</h4>
         </div>
         <Masonry
           breakpointCols={breakpointColumnsObj}

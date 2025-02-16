@@ -25,7 +25,7 @@ const Blcollection = () => {
     <div className="blcollection">
       <div className="blcollection-wrapper">
         <div className="blcollection-content">
-          <span className="subtitle-sm mt-32">NIKE BASKETBALL</span>
+          <span className="subtitle-sm mt-10 md:mt-32">NIKE BASKETBALL</span>
           <div className="blcollection-title-wrapper">
             <h1 className="mb-8">BLACK LABEL </h1>
             <div className="slider-navigation flex items-center justify-center gap-3">
@@ -68,12 +68,22 @@ const Blcollection = () => {
         </div>
         <div className="blcollection-slider">
           <Swiper
-            slidesPerView={3}
-            spaceBetween={60}
+            slidesPerView={1}
+            spaceBetween={20}
             freeMode={true}
             modules={[FreeMode]}
             navigation={false}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 60,
+              },
+            }}
             className="mySwiper"
           >
             {images.map((item, index) => (

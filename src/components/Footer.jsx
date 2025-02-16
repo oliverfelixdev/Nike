@@ -56,7 +56,7 @@ const Footer = () => {
 
   return (
     <footer className="py-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-items-start md:justify-items-center">
         <div>
           <h3 className="subtitle-xl mb-3">Products</h3>
           <ul className="space-y-2 text-sm text-gray-400">

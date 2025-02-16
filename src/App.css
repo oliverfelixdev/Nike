@@ -136,6 +136,25 @@
     height: 100%;
     width: 100%;
   }
+
+  .blcollection-wrapper {
+    width: 100%;
+    padding: 1rem 1rem 1rem 1rem;
+  }
+
+  .blcollection-title-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 0 0 2rem 0;
+  }
+
+  .trending-wrapper {
+    width: 100%;
+    padding: 1rem 1rem;
+  }
 }
 
 @media only screen and (max-width: 425px) {

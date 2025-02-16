@@ -19,12 +19,13 @@ const Uitexteffect = () => {
   }, []);
 
   return (
-    <div className="text-center flex items-center justify-center cursor-grab h-[18rem]">
+    <div className="text-center flex items-center justify-center cursor-grab h-[10rem] md:h-[18rem]">
       <h1
+        className="uitexteffect-heading"
         style={{
           fontFamily: "Ht",
           fontWeight: weight,
-          fontSize: "6.5rem",
+          fontSize: "8vw",
           transition: "all 0.6s cubic-bezier(0.22, 1, 0.36, 1)",
         }}
       >

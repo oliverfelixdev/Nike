@@ -3,7 +3,7 @@ import Button from "./Button";
 import { Link } from "react-router-dom";
 const Newsslider = () => {
   return (
-    <div className="newsslider relative w-full flex items-start justify-between px-4 sm:px-8 py-10 sm:pt-20 select-none sm overflow-hidden">
+    <div className="newsslider relative w-full flex items-start justify-between px-4 sm:px-8 py-10 sm:pt-20 overflow-hidden">
       <div className="text-5xl font-semibold hidden sm:inline-block">02</div>
       <div className="w-[80%] flex items-center sm:items-start justify-between">
         <h2 className="text-9xl sm:text-[11rem] font-[FG] leading-[.55]">01</h2>

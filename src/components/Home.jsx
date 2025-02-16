@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
-import Shoemodel from "./Shoemodel";
-
+import Shoemodel from "../utils/Shoemodel";
 const Home = () => {
   return (
     <div className="home">

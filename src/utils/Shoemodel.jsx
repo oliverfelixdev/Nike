@@ -1,22 +1,16 @@
 import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
+
 const Model = () => {
   const { scene } = useGLTF("/shoepegasus.glb");
-  //   console.log(scene);
   const modelRef = useRef();
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime(); // Time-based animation
-
-    // Breathing effect (scaling up and down)
     const scaleFactor = 1.5 + 0.05 * Math.sin(t * 0.5);
     modelRef.current.scale.set(scaleFactor, scaleFactor, scaleFactor);
-
-    // Left-right tilt effect
     modelRef.current.rotation.z = Math.PI / 1.6 + 0.1 * Math.sin(t * 0.5);
-
-    // Floating top-bottom movement
     modelRef.current.position.y = 0.2 * Math.sin(t * 0.5);
   });
 
