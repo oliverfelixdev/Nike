@@ -30,18 +30,20 @@
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  user-select: none;
+  /* user-select: none; */
 }
 
 .navigation {
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  /* position: absolute; */
+  /* top: 0; */
+  /* left: 0; */
   z-index: 3;
-  backdrop-filter: blur(25px);
+  backdrop-filter: blur(1px);
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-  rgba(244, 244, 245, 0.15) 0px 0px 0px 1px;
+    rgba(244, 244, 245, 0.15) 0px 0px 0px 1px;
+
+  background-color: #00000035;
 }
 
 .navigation-top {

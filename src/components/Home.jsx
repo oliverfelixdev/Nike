@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
-import { Link } from "react-router-dom";
 import Button from "./Button";
 import Shoemodel from "../utils/Shoemodel";
+
 const Home = () => {
   return (
     <div className="home">
@@ -15,7 +15,7 @@ const Home = () => {
             <p className="home-description subtitle-lg mb-2 sm:block hidden">
               They'll talk whether you rise or fall. So leave 'em breathless.
             </p>
-            <Button text="Shop Products" />
+            <Button text="Shop Products" linkroute={"/shopall"} />
           </div>
         </div>
       </div>

@@ -3,20 +3,23 @@ import { Link } from "react-router-dom";
 import { MdFavoriteBorder } from "react-icons/md";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoCartOutline } from "react-icons/io5";
+import nikeImage from "../assets/images/nike.svg";
+import jordanImage from "../assets/images/jordan.svg";
+
 const Navigation = () => {
   const linksFetch = [
     { link: "New", toward: "/newarrivals" },
-    { link: "Men", toward: "/newarrivals" },
-    { link: "Women", toward: "/newarrivals" },
-    { link: "Kids", toward: "/newarrivals" },
-    { link: "Jordan", toward: "/newarrivals" },
+    { link: "Men", toward: "/men" },
+    { link: "Women", toward: "/women" },
+    { link: "Kids", toward: "/kids" },
+    { link: "Jordan", toward: "/jordan" },
   ];
 
   return (
-    <div className="navigation">
+    <nav className="navigation">
       <div className="navigation-top">
         <Link to="/jordan">
-          <img src="./src/assets/images/jordan.svg" alt="Not Found" />
+          <img src={jordanImage} alt="Not Found" />
         </Link>
         <div className="link-container">
           {["Find a Store", "Help", "Join Us", "Sign In"].map((item, index) => (
@@ -28,7 +31,7 @@ const Navigation = () => {
       </div>
       <div className="navigation-primary">
         <Link to="/">
-          <img src="./src/assets/images/nike.svg" alt="not found" />
+          <img src={nikeImage} alt="not found" />
         </Link>
         <div className="link-container">
           {linksFetch.map((item, index) => (
@@ -63,7 +66,7 @@ const Navigation = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

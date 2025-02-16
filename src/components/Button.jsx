@@ -1,16 +1,16 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-const Button = ({ text }) => {
+const Button = ({ text, linkroute }) => {
   return (
-    <button className="buttonMain">
+    <Link to={linkroute} className="buttonMain w-fit">
       <div className="buttonMain-span buttonMain-span-1">
         <span>{text}</span>
       </div>
       <div className="buttonMain-span buttonMain-span-2">
         <span>{text}</span>
       </div>
-    </button>
+    </Link>
   );
 };
 
