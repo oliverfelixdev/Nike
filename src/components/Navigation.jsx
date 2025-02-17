@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { MdFavoriteBorder } from "react-icons/md";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoCartOutline } from "react-icons/io5";
 import nikeImage from "../assets/images/nike.svg";
 import jordanImage from "../assets/images/jordan.svg";
+import { ProductContext } from "../utils/Context";
 
 const Navigation = () => {
-  const linksFetch = [
-    { link: "New", toward: "/newarrivals" },
-    { link: "Men", toward: "/men" },
-    { link: "Women", toward: "/women" },
-    { link: "Kids", toward: "/kids" },
-    { link: "Jordan", toward: "/jordan" },
-  ];
+  const [products] = useContext(ProductContext);
+
+  let filterCatgs =
+    products && products.reduce((acc, cv) => [...acc, cv.category], []);
+  filterCatgs = [...new Set(filterCatgs)];
+
+  console.log(filterCatgs);
 
   return (
     <nav className="navigation">
@@ -34,9 +35,13 @@ const Navigation = () => {
           <img src={nikeImage} alt="not found" />
         </Link>
         <div className="link-container">
-          {linksFetch.map((item, index) => (
-            <Link key={index} className="subtitle-lg" to={item.toward}>
-              {item.link}
+          {filterCatgs.map((category, index) => (
+            <Link
+              key={index}
+              className="subtitle-lg capitalize"
+              to={`/shopall?category=${category}`}
+            >
+              <span>{category}</span>
             </Link>
           ))}
         </div>

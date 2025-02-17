@@ -84,6 +84,33 @@
   }
 }
 
+.loading-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(
+    90deg,
+    #d1d1d1,
+    #a0a0a0,
+    #ffffff,
+    #a0a0a0,
+    #d1d1d1
+  );
+  background-size: 300% 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: loadingAnimation 2s infinite ease-in-out;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    background-position: 150% 0;
+  }
+  100% {
+    background-position: -150% 0;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .navigation {
     width: 100%;

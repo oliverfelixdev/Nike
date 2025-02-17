@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "../utils/axios";
+import Loader from "./Loader";
 
 const Productdetails = () => {
-  return (
+  const [product, setProduct] = useState(null);
+  const { id } = useParams();
+  console.log(id);
+  const getSingleProduct = async () => {
+    try {
+      const { data } = await axios.get(`/products/${id}`);
+      setProduct(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getSingleProduct();
+  }, []);
+
+  return product ? (
     <div className="max-w-4xl mx-auto p-6 bg-zinc-500 mt-20">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <img
-          src="/path-to-image.jpg"
+          src={product.image}
           alt="Nike Air Max"
           className="w-full rounded-lg shadow-lg"
         />
@@ -22,6 +41,8 @@ const Productdetails = () => {
         </div>
       </div>
     </div>
+  ) : (
+    <Loader />
   );
 };
 

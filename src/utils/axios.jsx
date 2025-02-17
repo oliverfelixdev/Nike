@@ -1,5 +1,4 @@
 import axios from "axios";
-
-const instance = axios.create(); // No need for 'url' in the config
+const instance = axios.create();
 
 export default instance;
