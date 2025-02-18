@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { ProductContext } from "../utils/Context";
 
 const Footer = () => {
   const [time, setTime] = useState(new Date());
   const [weight, setWeight] = useState(400);
+  const [products] = useContext(ProductContext);
+
+  let categories = products
+    ? [...new Set(products.map((products) => products.category))]
+    : [];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -59,19 +65,15 @@ const Footer = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-items-start md:justify-items-center">
         <div>
           <h3 className="subtitle-xl mb-3">Products</h3>
-          <ul className="space-y-2 text-sm text-gray-400">
+          <ul className="space-y-2 text-sm text-gray-400 capitalize">
             <li>
-              <Link to="/newarrivals">New Arrivals</Link>
+              <Link to="/underwork">New Arrivals</Link>
             </li>
-            <li>
-              <Link to="/men">Men</Link>
-            </li>
-            <li>
-              <Link to="/women">Women</Link>
-            </li>
-            <li>
-              <Link to="/kids">Kids</Link>
-            </li>
+            {categories.map((category, index) => (
+              <li key={index}>
+                <Link to={`/shopall?category=${category}`}>{category}</Link>
+              </li>
+            ))}
             <li>
               <Link to="/jordan">Jordan</Link>
             </li>
@@ -95,6 +97,7 @@ const Footer = () => {
         <p>
           © {new Date().getFullYear()} Nike Remake By {""}
           <a
+            target="_self"
             href="https://github.com/oliverfelixdev/"
             style={{
               color: "#D1D5DB",

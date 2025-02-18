@@ -11,9 +11,9 @@
   font-family: "Ht";
 }
 
-*::-webkit-scrollbar {
+/* *::-webkit-scrollbar {
   display: none;
-}
+} */
 
 @font-face {
   font-family: "Ht";
@@ -39,15 +39,12 @@
 
 .navigation {
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 3;
-  backdrop-filter: blur(1px);
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(244, 244, 245, 0.15) 0px 0px 0px 1px;
-
-  background-color: #00000035;
+  z-index: 99;
+  box-shadow: #00000005 0px 1px 3px 0px, #f4f4f510 0px 0px 0px 1px;
+  transition: all 0.3as cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .navigation-top {

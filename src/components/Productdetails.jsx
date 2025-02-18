@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { CgClose } from "react-icons/cg";
 import axios from "../utils/axios";
 import Loader from "./Loader";
 
 const Productdetails = () => {
+  const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const { id } = useParams();
 
@@ -25,22 +27,18 @@ const Productdetails = () => {
     getSingleProduct();
   }, [id]);
 
-  useEffect(() => {
-    console.log(product);
-  }, [product]);
-
   if (!product) {
     return <Loader />;
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10 md:mt-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="min-h-screen w-full bg-white flex items-center justify-center p-4">
+      <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 relative mt-20">
         <div className="w-full overflow-hidden rounded-lg shadow-md">
           <img
             src={`/data/${product.image}`}
             alt={product.title}
-            className="w-full h-auto object-cover object-center transition-transform duration-300 hover:scale-105"
+            className="w-full h-auto object-cover object-center transition-transform duration-300"
           />
         </div>
         <div className="flex flex-col justify-center">
@@ -52,24 +50,24 @@ const Productdetails = () => {
           </p>
 
           {/* Display Category */}
-          <p className="text-gray-600 mt-2 text-sm md:text-base">
+          <p className="text-gray-600 mt-2 text-sm md:text-base capitalize">
             <span className="font-semibold">Category:</span> {product.category}
           </p>
 
           {/* Display Rating */}
           <p className="text-gray-600 mt-2 text-sm md:text-base">
-            <span className="font-semibold">Rating:</span> {product.rating}/5
+            <span className="font-semibold">Rating:</span> {product.rating}
+          </p>
+
+          {/* Display Price */}
+          <p className="text-gray-600 mt-2 text-sm md:text-base">
+            <span className="font-semibold">Price:</span> ${product.price}
           </p>
 
           {/* Display Colors */}
           <p className="text-gray-600 mt-2 text-sm md:text-base">
             <span className="font-semibold">Colors:</span>{" "}
             {product.colors.join(", ")}
-          </p>
-
-          {/* Display Price */}
-          <p className="text-xl font-semibold text-gray-800 mt-4">
-            ${product.price}
           </p>
 
           {/* Display Stock Status */}
@@ -84,12 +82,43 @@ const Productdetails = () => {
 
           {/* Add to Cart Button */}
           <button
-            className="mt-6 bg-black text-white py-2 px-6 rounded-lg hover:bg-gray-800 transition-colors duration-300"
-            disabled={product.stockStatus !== "inStock"}
+            className={`buttonMain mt-6 w-fit ${
+              product.stockStatus === "out of stock" &&
+              "pointer-events-none opacity-50"
+            }`}
+            style={{
+              backgroundColor: "#151516",
+              color: "#fcfcfc",
+            }}
+            disabled={product.stockStatus !== "In Stock"}
           >
-            {product.stockStatus === "inStock" ? "Add to Cart" : "Out of Stock"}
+            <div className="buttonMain-span buttonMain-span-1">
+              <span>
+                {product.stockStatus === "In Stock"
+                  ? "Add to Cart"
+                  : "Out Of Stock"}
+              </span>
+            </div>
+            <div className="buttonMain-span buttonMain-span-2">
+              <span>
+                {product.stockStatus === "In Stock"
+                  ? "Add to Cart"
+                  : "Out Of Stock"}
+              </span>
+            </div>
           </button>
         </div>
+        <button
+          onClick={() => navigate(-1)}
+          style={{
+            transition: "0.6s cubic-bezier(0.83, 0, 0.17, 1)",
+          }}
+          className="text-[var(--color-light)] bg-[var(--color-dark)] p-1.5 rounded-[0.25rem] text-sm md:text-base absolute top-0 right-0 hover:scale-90"
+        >
+          <span>
+            <CgClose />
+          </span>
+        </button>
       </div>
     </div>
   );

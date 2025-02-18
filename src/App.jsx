@@ -7,27 +7,36 @@ import Blcollection from "./components/Blcollection";
 import Trending from "./components/Trending";
 import Uitexteffect from "./components/Uitexteffect";
 import Footer from "./components/Footer";
-import { Route, Routes } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 import Shopall from "./components/Shopall";
 import Productdetails from "./components/Productdetails";
-import Loader from "./components/Loader";
+import Sidebar from "./components/Sidebar";
 
 const App = () => {
   return (
     <div className="bg-[var(--color-dark)] text-[var(--color-light)] min-h-screen w-full">
       <Navigation />
-
+      {/* <Sidebar /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Home />
+              <Newsslider />
+              <Blcollection />
+              <Trending />
+              <Uitexteffect />
+              <Footer />
+            </>
+          }
+        />
         <Route path="/shopall" element={<Shopall />} />
-        <Route path="/productdetails/:id" element={<Productdetails />} />
+        <Route
+          path="/shopall/productdetails/:id"
+          element={<Productdetails />}
+        />
       </Routes>
-
-      {/* <Newsslider />
-      <Blcollection />
-      <Trending />
-      <Uitexteffect />
-      <Footer /> */}
     </div>
   );
 };

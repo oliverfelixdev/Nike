@@ -1,11 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "../utils/axios";
 import { ProductContext } from "../utils/Context";
 import Loader from "./Loader";
+import { motion } from "framer-motion";
 
 const Shopall = () => {
   const [products] = useContext(ProductContext);
+
+  const navigate = useNavigate(-1);
+  const [visible, setVisible] = useState(true);
 
   const { search } = useLocation();
   const category = search.includes("=")
@@ -25,18 +29,33 @@ const Shopall = () => {
 
   console.log(filteredProducts);
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        setVisible(false);
+      } else {
+        setVisible(true);
+      }
+      lastScrollY = window.scrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return products && filteredProducts ? (
-    <div className="shopall h-full w-full pt-px">
+    <div className="shopall h-full w-full pt-px bg-zinc-50">
       <div className="shopall-wrap w-full">
         <div className="shopall-cards mt-32 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-7 p-4">
           {filteredProducts &&
             filteredProducts.map((prdcts, index) => (
               <Link
                 key={index}
-                to={`/productdetails/${prdcts.id}`}
+                to={`/shopall/productdetails/${prdcts.id}`}
                 className="shopall-card w-full sm:w-72"
               >
-                <article className="group bg-white shadow-sm rounded-lg overflow-hidden">
+                <article className="group bg-[var(--color-light)] shadow-sm rounded-lg overflow-hidden">
                   <div className="w-full overflow-hidden">
                     <img
                       src={`/data/${prdcts.image}`}
@@ -58,6 +77,17 @@ const Shopall = () => {
             ))}
         </div>
       </div>
+      <motion.div
+        animate={{ opacity: visible ? 1 : 0 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="navigati-badge text-xs py-2 px-4 rounded-[0.25rem] bg-[var(--color-dark)] text-[var(--color-light)] cursor-pointer fixed bottom-4 right-4 hover:scale-90"
+        style={{
+          transition: "all 0.6s cubic-bezier(0.83, 0, 0.17, 1)",
+        }}
+        onClick={() => navigate(-1)}
+      >
+        Go Back
+      </motion.div>
     </div>
   ) : (
     <Loader />
