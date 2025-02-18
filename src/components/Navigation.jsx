@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { MdFavoriteBorder } from "react-icons/md";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoCartOutline } from "react-icons/io5";
@@ -9,7 +9,7 @@ import { ProductContext } from "../utils/Context";
 
 const Navigation = () => {
   const [products] = useContext(ProductContext);
-
+  const location  = useLocation();
   let filterCatgs =
     products && products.reduce((acc, cv) => [...acc, cv.category], []);
   filterCatgs = [...new Set(filterCatgs)];
@@ -36,13 +36,19 @@ const Navigation = () => {
         </Link>
         <div className="link-container">
           {filterCatgs.map((category, index) => (
-            <Link
+            <NavLink
               key={index}
               className="subtitle-lg capitalize"
               to={`/shopall?category=${category}`}
+              style={() => ({
+                textDecoration:
+                  location.search === `?category=${category}`
+                    ? "underline"
+                    : "initial",
+              })}
             >
               <span>{category}</span>
-            </Link>
+            </NavLink>
           ))}
         </div>
         <div className="navigation-functional flex items-center justify-center gap-4">
