@@ -8,6 +8,7 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { FreeMode } from "swiper/modules";
 import { Link } from "react-router-dom";
+import Lazyload from "../utils/Lazyload";
 const Blcollection = () => {
   const swiperRef = useRef(null);
   const images = [
@@ -90,7 +91,7 @@ const Blcollection = () => {
               <SwiperSlide key={index}>
                 <div className="slide-content">
                   <Link to="/shopall">
-                    <img src={item.src} alt={item.name} />
+                    <Lazyload src={item.src} alt={item.name} type="image" />
                   </Link>
                   <p className="subtitle-xl pt-2">{item.name}</p>
                 </div>

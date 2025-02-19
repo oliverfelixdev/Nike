@@ -7,16 +7,21 @@ import Blcollection from "./components/Blcollection";
 import Trending from "./components/Trending";
 import Uitexteffect from "./components/Uitexteffect";
 import Footer from "./components/Footer";
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Shopall from "./components/Shopall";
 import Productdetails from "./components/Productdetails";
-import Sidebar from "./components/Sidebar";
 
 const App = () => {
   return (
-    <div className="bg-[var(--color-dark)] text-[var(--color-light)] min-h-screen w-full">
+    <div
+      style={{
+        backgroundColor: "var(--color-dark)",
+        color: "var(--color-light)",
+        minHeight: "100vh",
+        width: "100%",
+      }}
+    >
       <Navigation />
-      {/* <Sidebar /> */}
       <Routes>
         <Route
           path="/"

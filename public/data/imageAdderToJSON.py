@@ -54,7 +54,7 @@ def update_json_with_images(output_file="nikedata.json"):
     with open(output_file, "r") as json_file:
         data = json.load(json_file)
 
-    image_files = sorted(os.listdir(image_folder))  # Sorting ensures ID order
+    image_files = sorted(os.listdir(image_folder))  # Sorting ID order
 
     for item, image in zip(data, image_files):
         if image.lower().endswith(("jpg", "jpeg", "png", "gif")):

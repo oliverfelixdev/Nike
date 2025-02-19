@@ -28,7 +28,6 @@ const Shoemodel = () => {
     <div className="shoe-model">
       <div className="glb-model-main">
         <Canvas flat camera={{ fov: 35, position: [0, 0, 5] }}>
-          {/* <OrbitControls /> */}
           <ambientLight />
           <directionalLight position={[2, 2, 2]} />
           <EffectComposer>

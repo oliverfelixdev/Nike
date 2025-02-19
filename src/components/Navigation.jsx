@@ -8,7 +8,7 @@ import nikeImage from "../assets/images/nike.svg";
 import jordanImage from "../assets/images/jordan.svg";
 import { ProductContext } from "../utils/Context";
 
-const Navigation = ({ category }) => {
+const Navigation = () => {
   const [products] = useContext(ProductContext);
   const location = useLocation();
   const isShopPage = location.pathname.includes("shopall");
@@ -16,6 +16,7 @@ const Navigation = ({ category }) => {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (scrollY.get() > lastScrollY) {
@@ -25,7 +26,8 @@ const Navigation = ({ category }) => {
       }
       setLastScrollY(scrollY.get());
     };
-    const unsubscribe = scrollY.onChange(handleScroll);
+    const unsubscribe = scrollY.on("change", handleScroll);
+
     return () => unsubscribe();
   }, [scrollY, lastScrollY]);
 
@@ -40,14 +42,12 @@ const Navigation = ({ category }) => {
   let filterCatgs =
     products && products.reduce((acc, cv) => [...acc, cv.category], []);
   filterCatgs = [...new Set(filterCatgs)];
-  console.log(filterCatgs);
-
   return (
     <>
       <motion.nav
         initial={{ y: 0 }}
         animate={{ y: visible ? 0 : "-100%" }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="navigation"
         style={{
           backgroundColor: isShopPage ? "#fcfcfc" : "#151516",

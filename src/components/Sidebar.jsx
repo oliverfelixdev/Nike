@@ -14,7 +14,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
     <motion.div
       initial={{ x: "100%" }}
       animate={{ x: isSidebarOpen ? "0%" : "100%" }}
-      transition={{ duration: 1, ease: [0.85, 0, 0.15, 1] }}
+      transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}
       className="fixed top-0 right-0 z-[100] w-full sm:w-[400px] h-full bg-[var(--color-dark)] text-[var(--color-light)] overflow-auto shadow-lg p-6 flex flex-col"
     >
       <div className="flex items-center justify-between w-full pt-6 pb-4 relative">

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Masonry from "react-masonry-css";
 import Button from "./Button";
+import Lazyload from "../utils/Lazyload";
 
 const Trending = () => {
   const images = [
@@ -61,7 +62,9 @@ const Trending = () => {
     <div className="trending">
       <div className="trending-wrapper">
         <div className="trending-content">
-          <h4 className="text-2xl font-medium mt-10 md:mt-32 mb-6">Trending Now</h4>
+          <h4 className="text-2xl font-medium mt-10 md:mt-32 mb-6">
+            Trending Now
+          </h4>
         </div>
         <Masonry
           breakpointCols={breakpointColumnsObj}
@@ -70,9 +73,10 @@ const Trending = () => {
         >
           {shuffledImages.map((img, index) => (
             <div key={index} className="relative rounded-sm overflow-hidden">
-              <img
+              <Lazyload
                 src={img.image}
                 alt={img.title}
+                type="image"
                 className="w-full h-auto object-cover"
               />
               <Link to="/shopall">

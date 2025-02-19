@@ -1,8 +1,19 @@
-import React, { useMemo } from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 import Button from "./Button";
-import Shoemodel from "../utils/Shoemodel";
+
+const Shoemodel = lazy(() => import("../utils/Shoemodel")); // Lazy load
 
 const Home = () => {
+  const [showModel, setShowModel] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowModel(true);
+    }, 7000); // 7 seconds delay
+
+    return () => clearTimeout(timer); // Cleanup on unmount
+  }, []);
+
   return (
     <div className="home">
       <div className="home-container">
@@ -19,7 +30,12 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* <Shoemodel /> */}
+
+      {showModel && (
+        <Suspense fallback={<div className="loading">Loading Model...</div>}>
+          <Shoemodel />
+        </Suspense>
+      )}
     </div>
   );
 };

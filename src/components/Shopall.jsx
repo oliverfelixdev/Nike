@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import axios from "../utils/axios";
 import { ProductContext } from "../utils/Context";
 import Loader from "./Loader";
 import { motion } from "framer-motion";
+import Lazyload from "../utils/Lazyload";
 
 const Shopall = () => {
   const [products] = useContext(ProductContext);
@@ -57,9 +57,10 @@ const Shopall = () => {
               >
                 <article className="group bg-[var(--color-light)] shadow-sm rounded-lg overflow-hidden">
                   <div className="w-full overflow-hidden">
-                    <img
+                    <Lazyload
                       src={`/data/${prdcts.image}`}
-                      alt="Not Found"
+                      type="image"
+                      alt={prdcts.title}
                       className="object-cover object-center w-full grayscale-[0.1] group-hover:grayscale-0 h-full rounded-md group-hover:scale-105 transition-all"
                     />
                   </div>
