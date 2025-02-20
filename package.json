@@ -18,6 +18,7 @@
     "@types/three": "^0.172.0",
     "axios": "^1.7.9",
     "framer-motion": "^11.18.2",
+    "fuse.js": "^7.1.0",
     "gsap": "^3.12.5",
     "lenis": "^1.1.20",
     "mouse-follower": "^1.1.2",

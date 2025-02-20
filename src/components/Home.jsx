@@ -9,9 +9,9 @@ const Home = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowModel(true);
-    }, 7000); // 7 seconds delay
+    }, 7000);
 
-    return () => clearTimeout(timer); // Cleanup on unmount
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -31,11 +31,11 @@ const Home = () => {
         </div>
       </div>
 
-      {showModel && (
+      {/*       {showModel && (
         <Suspense fallback={<div className="loading">Loading Model...</div>}>
           <Shoemodel />
         </Suspense>
-      )}
+      )} */}
     </div>
   );
 };

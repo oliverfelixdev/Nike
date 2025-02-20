@@ -9,9 +9,10 @@ import jordanImage from "../assets/images/jordan.svg";
 import { ProductContext } from "../utils/Context";
 
 const Navigation = () => {
-  const [products] = useContext(ProductContext);
   const location = useLocation();
+  const [products] = useContext(ProductContext);
   const isShopPage = location.pathname.includes("shopall");
+
   const [lastScrollY, setLastScrollY] = useState(0);
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(true);
@@ -19,52 +20,38 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (scrollY.get() > lastScrollY) {
-        setVisible(false);
-      } else {
-        setVisible(true);
-      }
+      setVisible(scrollY.get() <= lastScrollY);
       setLastScrollY(scrollY.get());
     };
     const unsubscribe = scrollY.on("change", handleScroll);
-
     return () => unsubscribe();
   }, [scrollY, lastScrollY]);
 
   useEffect(() => {
-    if (isSidebarOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = isSidebarOpen ? "hidden" : "auto";
   }, [isSidebarOpen]);
 
-  let filterCatgs =
-    products && products.reduce((acc, cv) => [...acc, cv.category], []);
+  let filterCatgs = products?.reduce((acc, cv) => [...acc, cv.category], []);
   filterCatgs = [...new Set(filterCatgs)];
+
   return (
     <>
       <motion.nav
         initial={{ y: 0 }}
         animate={{ y: visible ? 0 : "-100%" }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="navigation"
         style={{
           backgroundColor: isShopPage ? "#fcfcfc" : "#151516",
           color: isShopPage ? "#151516" : "#fcfcfc",
-          boxShadow: isShopPage
-            ? "#00000005 0px 1px 3px 0px, #00000010 0px 0px 0px 1px"
-            : "#00000005 0px 1px 3px 0px, #f4f4f00 0px 0px 0px 1px",
         }}
       >
         <div className="navigation-top">
           <Link to="/jordan">
             <img
               src={jordanImage}
-              alt="Not Found"
-              style={{
-                filter: isShopPage ? "invert(1)" : "invert(0)",
-              }}
+              alt="Jordan Logo"
+              style={{ filter: isShopPage ? "invert(1)" : "invert(0)" }}
             />
           </Link>
           <div className="link-container">
@@ -81,20 +68,12 @@ const Navigation = () => {
           <Link to="/">
             <img
               src={nikeImage}
-              alt="not found"
-              style={{
-                filter: isShopPage ? "invert(1)" : "invert(0)",
-              }}
+              alt="Nike Logo"
+              style={{ filter: isShopPage ? "invert(1)" : "invert(0)" }}
             />
           </Link>
           <div className="link-container">
-            <NavLink
-              to="/underwork"
-              className="subtitle-lg capitalize"
-              style={(e) => ({
-                borderBottom: e.isActive ? "1.4px solid #fff" : "initial",
-              })}
-            >
+            <NavLink to="/underwork" className="subtitle-lg capitalize">
               <span>New</span>
             </NavLink>
             {filterCatgs.map((category, index) => (
@@ -102,53 +81,37 @@ const Navigation = () => {
                 key={index}
                 className="subtitle-lg capitalize"
                 to={`/shopall?category=${category}`}
-                style={() => ({
-                  borderBottom:
-                    location.search === `?category=${category}`
-                      ? "1.4px solid #fff"
-                      : "initial",
-                })}
               >
                 <span>{category}</span>
               </NavLink>
             ))}
-            <NavLink
-              to="/jordan"
-              className="subtitle-lg capitalize"
-              style={(e) => ({
-                borderBottom: e.isActive ? "1.4px solid #fff" : "initial",
-              })}
-            >
+            <NavLink to="/jordan" className="subtitle-lg capitalize">
               <span>Jordan</span>
             </NavLink>
           </div>
-          <div className="navigation-functional flex items-center justify-center gap-4">
-            <div
-              className="search-wrap flex items-center justify-center gap-1 pl-3 py-px rounded-full overflow-hidden"
-              style={{
-                boxShadow: isShopPage
-                  ? "#00000005 0px 1px 3px 0px, #00000035 0px 0px 0px 1px"
-                  : "#00000005 0px 1px 3px 0px, #f4f4f535 0px 0px 0px 1px",
-              }}
-            >
-              <span>
-                <IoSearchOutline />
-              </span>
-              <input
-                type="search"
-                placeholder="Search"
-                id="searchbar"
-                className="rounded-full w-32 px-2 text-sm py-1.5 bg-transparent focus:outline-none"
-              />
+          <div className="navigation-functional flex items-center justify-start gap-[1.6rem]">
+            <div className="navigation-functional-visible-link flex items-center justify-start gap-[1.6rem]">
+              <Link
+                to="/search"
+                className="flex items-center justify-start subtitle-lg gap-1"
+              >
+                <span>
+                  <IoSearchOutline />
+                </span>
+                <span>Search</span>
+              </Link>
+              <Link to="/cart" className="subtitle-lg">
+                <span>Sign In</span>
+              </Link>
             </div>
-            <span className="md:block hidden">
-              <MdFavoriteBorder />
-            </span>
             <span className="md:block hidden">
               <IoCartOutline />
             </span>
+            <span className="md:block hidden">
+              <MdFavoriteBorder />
+            </span>
             <button
-              className="md:hidden block text-sm py-1.5 px-4 bg-[var(--color-light)] text-[var(--color-dark)] rounded-[0.25rem]"
+              className="md:hidden block text-sm py-1.5 px-4 rounded-[0.25rem]"
               style={{
                 backgroundColor: isShopPage ? "#151516" : "#fcfcfc",
                 color: isShopPage ? "#fcfcfc" : "#151516",

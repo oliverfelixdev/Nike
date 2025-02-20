@@ -11,9 +11,9 @@
   font-family: "Ht";
 }
 
-/* *::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
-} */
+}
 
 @font-face {
   font-family: "Ht";
@@ -34,7 +34,7 @@
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  /* user-select: none; */
+  user-select: none;
 }
 
 .navigation {
@@ -83,7 +83,7 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  margin-left: 8rem;
+  margin-left: 9rem;
 }
 
 .home {

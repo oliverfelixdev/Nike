@@ -10,10 +10,11 @@ import Footer from "./components/Footer";
 import { Route, Routes } from "react-router-dom";
 import Shopall from "./components/Shopall";
 import Productdetails from "./components/Productdetails";
+import Search from "./utils/Search";
 
 const App = () => {
   return (
-    <div
+    <div 
       style={{
         backgroundColor: "var(--color-dark)",
         color: "var(--color-light)",
@@ -41,6 +42,7 @@ const App = () => {
           path="/shopall/productdetails/:id"
           element={<Productdetails />}
         />
+        <Route path="/search" element={<Search />} />
       </Routes>
     </div>
   );

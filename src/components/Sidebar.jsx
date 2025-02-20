@@ -3,6 +3,7 @@ import { CgClose } from "react-icons/cg";
 import { useContext } from "react";
 import { ProductContext } from "../utils/Context";
 import { motion } from "framer-motion";
+import { IoSearchOutline } from "react-icons/io5";
 
 const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const [products] = useContext(ProductContext);
@@ -18,7 +19,19 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
       className="fixed top-0 right-0 z-[100] w-full sm:w-[400px] h-full bg-[var(--color-dark)] text-[var(--color-light)] overflow-auto shadow-lg p-6 flex flex-col"
     >
       <div className="flex items-center justify-between w-full pt-6 pb-4 relative">
-        <p className="text-xs uppercase text-gray-400 opacity-40">Menu</p>
+        <Link
+        onClick={() => setIsSidebarOpen(false)}
+          to="/search"
+          className="flex items-center justify-start subtitle-lg gap-1 py-1.5 pl-4 pr-32 rounded-full text-gray-400"
+          style={{
+            boxShadow: "#00000005 0px 1px 3px 0px, #80808030 0px 0px 0px 1px",
+          }}
+        >
+          <span>
+            <IoSearchOutline />
+          </span>
+          <span>Search</span>
+        </Link>
         <button onClick={() => setIsSidebarOpen(false)}>
           <span>
             <CgClose />

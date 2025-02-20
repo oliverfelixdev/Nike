@@ -34,11 +34,11 @@ const Productdetails = () => {
   return (
     <div className="min-h-screen w-full bg-white flex items-center justify-center p-4">
       <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 relative mt-20">
-        <div className="w-full overflow-hidden rounded-lg shadow-md">
+        <div className="w-full overflow-hidden rounded-lg shadow-md inverted-radius">
           <img
             src={`/data/${product.image}`}
             alt={product.title}
-            className="w-full h-auto object-cover object-center transition-transform duration-300"
+            className="w-full h-auto object-cover object-center transition-transform duration-300 "
           />
         </div>
         <div className="flex flex-col justify-center">
@@ -113,9 +113,9 @@ const Productdetails = () => {
           style={{
             transition: "0.6s cubic-bezier(0.83, 0, 0.17, 1)",
           }}
-          className="text-[var(--color-light)] bg-[var(--color-dark)] p-1.5 rounded-[0.25rem] text-sm md:text-base absolute top-0 right-0 hover:scale-90"
+          className="text-[var(--color-light)] bg-[var(--color-dark)] p-1.5 md:rounded-[0.25rem] rounded-[0.25rem] rounded-bl-lg text-sm md:text-base absolute top-0 right-0 hover:scale-90 icon-close-container "
         >
-          <span>
+          <span className="close-icon">
             <CgClose />
           </span>
         </button>
