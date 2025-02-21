@@ -17,6 +17,7 @@
 
 /* BUTTON MAIN */
 .buttonMain {
+  width: fit-content;
   border-radius: 0.25rem;
   background-color: var(--color-light);
   color: var(--color-dark);
@@ -217,6 +218,10 @@
   .trending-wrapper {
     width: 100%;
     padding: 1rem 1rem;
+  }
+
+  .underwork-title {
+    font-size: 3rem;
   }
 }
 

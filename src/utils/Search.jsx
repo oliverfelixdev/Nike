@@ -58,17 +58,16 @@ const Search = () => {
       setResults([]);
       return;
     }
-  
+
     const fuse = new Fuse(data, {
       keys: ["title", "description", "category"],
       threshold: 0.3,
       includeScore: true,
     });
-  
+
     const result = fuse.search(query).map(({ item }) => item);
     setResults(result);
   }, [query, data]);
-  
 
   return (
     <div className="search h-screen w-full pt-px flex flex-col items-center">

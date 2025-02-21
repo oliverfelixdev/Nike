@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { ProductContext } from "../utils/Context";
 import { motion } from "framer-motion";
 import { IoSearchOutline } from "react-icons/io5";
+import Button from "./Button";
 
 const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const [products] = useContext(ProductContext);
@@ -20,7 +21,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
     >
       <div className="flex items-center justify-between w-full pt-6 pb-4 relative">
         <Link
-        onClick={() => setIsSidebarOpen(false)}
+          onClick={() => setIsSidebarOpen(false)}
           to="/search"
           className="flex items-center justify-start subtitle-lg gap-1 py-1.5 pl-4 pr-32 rounded-full text-gray-400"
           style={{
@@ -110,6 +111,22 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           >
             Instagram
           </a>
+        </div>
+        <div className="border-t border-[#ffffff35] mt-6 pt-8 w-full">
+          <Link
+            to="/jordan"
+            className="buttonMain"
+            style={{
+              width: "100%",
+            }}
+          >
+            <div className="buttonMain-span buttonMain-span-1">
+              <span>Ignite the flames</span>
+            </div>
+            <div className="buttonMain-span buttonMain-span-2">
+              <span>Ignite the flames</span>
+            </div>
+          </Link>
         </div>
       </div>
     </motion.div>

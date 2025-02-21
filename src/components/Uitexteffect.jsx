@@ -19,7 +19,7 @@ const Uitexteffect = () => {
   }, []);
 
   return (
-    <div className="text-center flex items-center justify-center cursor-grab h-[10rem] md:h-[18rem]">
+    <div className="text-center flex items-center justify-center h-[10rem] md:h-[18rem]">
       <h1
         className="uitexteffect-heading"
         style={{

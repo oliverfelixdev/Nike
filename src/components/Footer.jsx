@@ -4,7 +4,6 @@ import { ProductContext } from "../utils/Context";
 
 const Footer = () => {
   const [time, setTime] = useState(new Date());
-  const [weight, setWeight] = useState(400);
   const [products] = useContext(ProductContext);
 
   let categories = products
@@ -19,11 +18,6 @@ const Footer = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const formattedTime = time.toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  });
   const footerLinks = [
     {
       category: "Help",
@@ -44,21 +38,6 @@ const Footer = () => {
       links: ["Facebook", "Twitter", "Instagram", "YouTube"],
     },
   ];
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const screenWidth = window.innerWidth;
-      const mouseX = e.clientX;
-      const fontWeight = Math.min(
-        900,
-        Math.max(100, (mouseX / screenWidth) * 800 + 100)
-      );
-      setWeight(fontWeight);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   return (
     <footer className="py-10">
@@ -93,22 +72,21 @@ const Footer = () => {
         ))}
       </div>
       <div className="border-t border-zinc-800 mt-8 pt-5 flex justify-between text-gray-400 text-sm">
-        <p>{formattedTime}</p>
-        <p>
-          © {new Date().getFullYear()} Nike Remake By {""}
-          <a
-            target="_self"
-            href="https://github.com/oliverfelixdev/"
-            style={{
-              color: "#D1D5DB",
-              fontFamily: "Ht",
-              fontWeight: weight,
-              transition: "all 0.6s cubic-bezier(0.22, 1, 0.36, 1)",
-            }}
-          >
-            Oliver Felix
-          </a>
-        </p>
+        <div className="flex items-center justify-start gap-10">
+          <p>© {new Date().getFullYear()} Nike Alter</p>
+        </div>
+        <div>
+          <p>
+            Design & Code by{" "}
+            <a
+              className="font-semibold text-gray-300"
+              target="_blank"
+              href="https://instagram.com/oliverfelix.dev/"
+            >
+              Oliver Felix
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );

@@ -27,8 +27,6 @@ const Shopall = () => {
     }
   }, [products, category]);
 
-  console.log(filteredProducts);
-
   useEffect(() => {
     let lastScrollY = window.scrollY;
     const handleScroll = () => {

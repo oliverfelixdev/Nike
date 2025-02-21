@@ -55,13 +55,19 @@ const Navigation = () => {
             />
           </Link>
           <div className="link-container">
-            {["Find a Store", "Help", "Join Us", "Sign In"].map(
-              (item, index) => (
-                <a key={index} className="subtitle-sm" href="#">
-                  {item}
-                </a>
-              )
-            )}
+            {["Find a Store", "Help", "Join Us"].map((item, index) => (
+              <Link
+                to="/underwork"
+                key={index}
+                className="subtitle-sm"
+                href="#"
+              >
+                {item}
+              </Link>
+            ))}
+            <Link to="/signin" className="subtitle-sm" href="#">
+              Sign In
+            </Link>
           </div>
         </div>
         <div className="navigation-primary">
@@ -100,7 +106,7 @@ const Navigation = () => {
                 </span>
                 <span>Search</span>
               </Link>
-              <Link to="/cart" className="subtitle-lg">
+              <Link to="/signin" className="subtitle-lg">
                 <span>Sign In</span>
               </Link>
             </div>
