@@ -6,7 +6,7 @@ const Signin = () => {
     <div className="min-h-full w-full overflow-auto flex items-center justify-center p-4">
       <form className="form_container mt-32 mb-8">
         <div className="logo_container flex items-center justify-center">
-          <img src="./src/assets/images/nike.svg" alt="" />
+          <img src="/assets/images/nike.svg" alt="" />
         </div>
         <div className="title_container">
           <p className="title">Login to your Account</p>

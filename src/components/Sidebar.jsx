@@ -119,6 +119,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
             style={{
               width: "100%",
             }}
+            onClick={() => setIsSidebarOpen(false)}
           >
             <div className="buttonMain-span buttonMain-span-1">
               <span>Ignite the flames</span>

@@ -1,7 +1,5 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "../Swiper.css";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -12,15 +10,15 @@ import Lazyload from "../utils/Lazyload";
 const Blcollection = () => {
   const swiperRef = useRef(null);
   const images = [
-    { src: "./src/assets/images/blcollection01.jpg", name: "Sabrina Ionescu" },
-    { src: "./src/assets/images/blcollection02.jpg", name: "LeBron James" },
-    { src: "./src/assets/images/blcollection03.jpg", name: "Ja Morant" },
+    { src: "/assets/images/blcollection01.jpg", name: "Sabrina Ionescu" },
+    { src: "/assets/images/blcollection02.jpg", name: "LeBron James" },
+    { src: "/assets/images/blcollection03.jpg", name: "Ja Morant" },
     {
-      src: "./src/assets/images/blcollection04.jpg",
+      src: "/assets/images/blcollection04.jpg",
       name: "Giannis Antetokounmpo",
     },
-    { src: "./src/assets/images/blcollection05.jpg", name: "Devin Booker" },
-    { src: "./src/assets/images/blcollection06.jpg", name: "Kevin Durant" },
+    { src: "/assets/images/blcollection05.jpg", name: "Devin Booker" },
+    { src: "/assets/images/blcollection06.jpg", name: "Kevin Durant" },
   ];
   return (
     <div className="blcollection">

@@ -4,8 +4,8 @@ import { MdFavoriteBorder } from "react-icons/md";
 import { IoSearchOutline, IoCartOutline } from "react-icons/io5";
 import { motion, useScroll } from "framer-motion";
 import Sidebar from "./Sidebar";
-import nikeImage from "../assets/images/nike.svg";
-import jordanImage from "../assets/images/jordan.svg";
+import nikeImage from "/assets/images/nike.svg";
+import jordanImage from "/assets/images/jordan.svg";
 import { ProductContext } from "../utils/Context";
 
 const Navigation = () => {

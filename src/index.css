@@ -17,17 +17,17 @@
 
 @font-face {
   font-family: "Ht";
-  src: url("./assets/fonts/helveticanowvar.ttf");
+  src: url("/assets/fonts/helveticanowvar.ttf");
 }
 
 @font-face {
   font-family: "FG";
-  src: url("./assets/fonts/foundersgrotesk.ttf");
+  src: url("/assets/fonts/foundersgrotesk.ttf");
 }
 
 @font-face {
   font-family: "RM";
-  src: url("./assets/fonts/robotomono.ttf");
+  src: url("/assets/fonts/robotomono.ttf");
 }
 
 #root {

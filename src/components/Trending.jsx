@@ -8,32 +8,32 @@ import Lazyload from "../utils/Lazyload";
 const Trending = () => {
   const images = [
     {
-      image: "./src/assets/images/trending01.jpg",
+      image: "/assets/images/trending01.jpg",
       title: "You can't ban greatness",
       subtitle: "Jordan brand",
     },
     {
-      image: "./src/assets/images/trending02.jpg",
+      image: "/assets/images/trending02.jpg",
       title: "Tailored for all-day comfort",
       subtitle: "Nike 24.7 collection",
     },
     {
-      image: "./src/assets/images/trending03.jpg",
+      image: "/assets/images/trending03.jpg",
       title: "Jersey culture",
       subtitle: "Bring your game",
     },
     {
-      image: "./src/assets/images/trending04.jpg",
+      image: "/assets/images/trending04.jpg",
       title: "GT cut 3 turbo LX black",
       subtitle: "A legacy in making",
     },
     {
-      image: "./src/assets/images/trending05.jpg",
+      image: "/assets/images/trending05.jpg",
       title: "Fit check",
       subtitle: "Culture of the game",
     },
     {
-      image: "./src/assets/images/trending06.jpg",
+      image: "/assets/images/trending06.jpg",
       title: "Court-Ready Styles",
       subtitle: "Culture of the game",
     },
