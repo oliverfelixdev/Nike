@@ -1,4 +1,4 @@
-# 🏀 Nike-Inspired E-Commerce Experience
+# 🏀 Reimagine Nike — E-Commerce Experience
 
 A high-quality, interactive, and responsive Nike-inspired e-commerce experience built with modern web technologies.
 
