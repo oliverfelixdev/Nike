@@ -11,6 +11,7 @@ import Productdetails from "../components/Productdetails";
 import Search from "../utils/Search";
 import Signin from "../components/Signin";
 import Underwork from "../components/Underwork";
+import Jordan from "../components/Jordan";
 const Routing = () => {
   return (
     <div>
@@ -36,6 +37,7 @@ const Routing = () => {
         <Route path="/search" element={<Search />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/underwork" element={<Underwork />} />
+        <Route path="/jordan" element={<Jordan />} />
       </Routes>
     </div>
   );

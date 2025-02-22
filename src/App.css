@@ -1,3 +1,39 @@
+/* GETS by canvas #Jordan #cylinderScence https://www.instagram.com/oliverfelix.dev */
+.jordan {
+  min-height: 120vh;
+  width: 100vw;
+  background: linear-gradient(to bottom, var(--color-dark), #000);
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.jordan canvas {
+  height: 100vh;
+  width: 100vw;
+}
+
+.jordan .jordan-info {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2rem 1rem 3rem 1rem;
+}
+
+.jordan-title {
+  margin-top: 8rem;
+  font-size: 10rem;
+  line-height: 1;
+  text-align: center;
+  background: linear-gradient(135deg, #ff0000, #000000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 /* Multiple Element styles with same class & styles are here in App.css */
 
 .subtitle-sm {
@@ -85,6 +121,11 @@
   }
 }
 
+.search-main {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgba(209, 213, 219, 0.197) 0px 0px 0px 1px inset;
+}
+
 .loading-text {
   font-size: 1.5rem;
   font-weight: bold;
@@ -101,11 +142,6 @@
   background-clip: text;
   -webkit-background-clip: text;
   animation: loadingAnimation 2s infinite ease-in-out;
-}
-
-.search-main {
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
-    rgba(209, 213, 219, 0.197) 0px 0px 0px 1px inset;
 }
 
 @keyframes loadingAnimation {
@@ -254,5 +290,17 @@
   .home-content .home-content-wrap p {
     line-height: 1;
     margin: 1rem 0;
+  }
+
+  .jordan-title {
+    font-size: 5.6rem;
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    line-height: 1;
+    background: linear-gradient(135deg, #ff0000, #000000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin-top: 8rem;
   }
 }

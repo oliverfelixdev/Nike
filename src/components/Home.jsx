@@ -1,7 +1,6 @@
 import React, { lazy, Suspense, useState, useEffect } from "react";
 import Button from "./Button";
-
-const Shoemodel = lazy(() => import("../utils/Shoemodel")); // Lazy load
+const Shoemodel = lazy(() => import("../utils/Shoemodel"));
 import { motion } from "framer-motion";
 
 const Home = () => {
