@@ -73,7 +73,7 @@ const Footer = () => {
       </div>
       <div className="border-t border-zinc-800 mt-8 pt-5 flex justify-between text-gray-400 text-sm">
         <div className="flex items-center justify-start gap-10">
-          <p>© {new Date().getFullYear()} Nike Alter</p>
+          <p>© {new Date().getFullYear()} Reimagine Nike</p>
         </div>
         <div>
           <p>
