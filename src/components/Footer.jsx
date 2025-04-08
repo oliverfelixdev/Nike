@@ -81,7 +81,7 @@ const Footer = () => {
             <a
               className="font-semibold text-gray-300"
               target="_blank"
-              href="https://instagram.com/oliverfelix.dev/"
+              href="https://www.linkedin.com/in/oliverfelixdev"
             >
               Oliver Felix
             </a>
