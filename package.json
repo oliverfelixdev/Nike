@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@barba/core": "^2.10.3",
-    "@react-three/drei": "^9.120.8",
-    "@react-three/fiber": "^8.17.12",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
     "@react-three/postprocessing": "^2.16.6",
     "@svg-drawing/react": "^5.0.1-beta.0",
     "@types/three": "^0.172.0",

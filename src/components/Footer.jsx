@@ -76,14 +76,14 @@ const Footer = () => {
           <p>© {new Date().getFullYear()} Reimagine Nike</p>
         </div>
         <div>
-          <p>
-            Design & Code by{" "}
+          <p className="uppercase text-xs">
+            Website by{" "}
             <a
-              className="font-semibold text-gray-300"
+              className="font-regular"
               target="_blank"
               href="https://www.linkedin.com/in/oliverfelixdev"
             >
-              Oliver Felix
+              Oliver
             </a>
           </p>
         </div>

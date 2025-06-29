@@ -33,7 +33,7 @@ const Underwork = () => {
           >
             Code in Motion*
           </h1>
-          <a href="https://instagram.com/oliverfelix.dev" target="_blank">
+          <a href="https://github.com/oliverfelixdev/" target="_blank">
             @Oliver
           </a>
           <div className="border-t border-[#ffffff35] mt-6 pt-8 w-full flex items-center justify-center">

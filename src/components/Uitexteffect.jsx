@@ -26,7 +26,7 @@ const Uitexteffect = () => {
           fontFamily: "Ht",
           fontWeight: weight,
           fontSize: "8vw",
-          transition: "all 0.6s cubic-bezier(0.22, 1, 0.36, 1)",
+          transition: "all 0.6s linear",
         }}
       >
         There is no finish line!
