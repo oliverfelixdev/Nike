@@ -67,12 +67,7 @@ const Home = () => {
           showModel ? "opacity-100" : "opacity-0"
         }`}
       >
-        <Suspense
-          className={`transition-opacity duration-1000 ease-in-out ${
-            showModel ? "opacity-100" : "opacity-0"
-          }`}
-          fallback={<div className="loading">Loading Model...</div>}
-        >
+        <Suspense fallback={<div className="loading">Loading Model...</div>}>
           <Shoemodel />
         </Suspense>
       </div>

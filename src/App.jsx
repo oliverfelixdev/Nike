@@ -15,7 +15,7 @@ const App = () => {
 
   return (
     <div
-      // onContextMenu={(e) => e.preventDefault()}
+      onContextMenu={(e) => e.preventDefault()}
       style={{
         backgroundColor: "var(--color-dark)",
         color: "var(--color-light)",

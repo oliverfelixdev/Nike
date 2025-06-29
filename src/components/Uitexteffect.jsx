@@ -1,21 +1,64 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+
+const phrases = [
+  "Push Beyond Possible!",
+  "There is no finish line.",
+  "Prove Them Wrong*",
+  "Own Your Edge",
+];
+
+// const specialChars = "$3●#&*@■!?";
+const specialChars = "A0l1cG3Ee";
+
+const shuffleText = (newText, setDisplayText) => {
+  let iterations = 0;
+  const maxIterations = 12;
+  const textArray = newText.split("");
+  const originalLength = textArray.length;
+
+  const interval = setInterval(() => {
+    const shuffled = textArray
+      .map((char, i) => {
+        if (
+          iterations < maxIterations &&
+          Math.random() > iterations / maxIterations
+        ) {
+          return specialChars[Math.floor(Math.random() * specialChars.length)];
+        } else {
+          return char;
+        }
+      })
+      .join("");
+
+    // pad or slice to keep length same as original
+    const padded =
+      shuffled.length > originalLength
+        ? shuffled.slice(0, originalLength)
+        : shuffled.padEnd(originalLength, " ");
+
+    setDisplayText(padded);
+    iterations++;
+
+    if (iterations > maxIterations) {
+      clearInterval(interval);
+      setDisplayText(newText);
+    }
+  }, 60); // slight increase in delay for visibility
+};
 
 const Uitexteffect = () => {
-  const [weight, setWeight] = useState(400);
+  const [displayText, setDisplayText] = useState(phrases[0]);
+  const indexRef = useRef(0);
 
+  // Phrase rotation + shuffle
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      const screenWidth = window.innerWidth;
-      const mouseX = e.clientX;
-      const fontWeight = Math.min(
-        900,
-        Math.max(100, (mouseX / screenWidth) * 800 + 100)
-      );
-      setWeight(fontWeight);
-    };
+    const interval = setInterval(() => {
+      indexRef.current = (indexRef.current + 1) % phrases.length;
+      const nextText = phrases[indexRef.current];
+      shuffleText(nextText, setDisplayText);
+    }, 3500);
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -24,12 +67,14 @@ const Uitexteffect = () => {
         className="uitexteffect-heading"
         style={{
           fontFamily: "Ht",
-          fontWeight: weight,
+          fontWeight: "300",
           fontSize: "8vw",
-          transition: "all 0.6s linear",
+          transition: "all 2s cubic-bezier(0.87, 0, 0.13, 1)",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
         }}
       >
-        There is no finish line!
+        {displayText}
       </h1>
     </div>
   );

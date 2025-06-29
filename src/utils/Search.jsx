@@ -91,8 +91,9 @@ const Search = () => {
             placeholder="Search Nike"
             value={query}
             onChange={(e) => {
-              setQuery(e.target.value);
-              navigate(`?q=${e.target.value}`); // Update URL
+              const newQuery = e.target.value;
+              setQuery(newQuery);
+              navigate(`?q=${newQuery}`, { replace: true }); // Updating the URL
             }}
           />
         </div>
